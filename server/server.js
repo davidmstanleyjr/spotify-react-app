@@ -13,12 +13,15 @@ app.post('/refresh', (req, res) => {
 		redirectUri: 'http://localhost:3000',
 		clientId: '49cb9bffd6fd4bb9b6df96a0858a23fa',
 		clientSecret: '1dfcf0a1642b4a1eae578cf378c872ea',
-		refreshToken
+		refreshToken,
 	});
 	spotifyApi
 		.refreshAccessToken()
 		.then((data) => {
-			console.log(data.body);
+			res.json({
+				accessToken: data.body.accessToken,
+				expiresIn: data.body.expiresIn
+			});
 		})
 		.catch(() => {
 			res.sendStatus(400);
