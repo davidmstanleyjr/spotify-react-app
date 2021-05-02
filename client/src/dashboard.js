@@ -23,7 +23,10 @@ export default function Dashboard({ code }) {
       if (!search) return setSearchResults([]) 
       if (!accessToken) return
 
+      let cancel = false;
+
       spotifyApi.searchTracks(search).then(res => {
+          if (cancel) return;
           setSearchResults(res.body.tracks.items.map(track => {
               const smallestAlbumImage = track.album.images.reduce(
                   (smallest, image) => {
@@ -38,6 +41,8 @@ export default function Dashboard({ code }) {
               }
           }))
       })
+
+      return () => cancel = true;
     }, [search, accessToken]);    
     return (
         <Container className="d-flex flex-column py-2" style={{ 
@@ -48,7 +53,10 @@ export default function Dashboard({ code }) {
             />
             <div className="flex-grow-1 my-2" style={{ overflowY: 
             'auto' }}>
-                Songs
+                {searchResults.map(track => (
+                    <TrackSearchResult track={track} key={track.uri} />
+
+                ))}
             </div>
             <div>Bottom</div>
         </Container>
