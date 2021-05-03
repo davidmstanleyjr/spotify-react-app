@@ -10,6 +10,7 @@ const spotifyApi = new SpotifyWebApi({
     clientId: '49cb9bffd6fd4bb9b6df96a0858a23fa'
 })
 
+//states for everything we need to make the app work. Access token, search function, search results, playing the actual track and getting the lyrics to the track.
 export default function Dashboard({ code }) {
     const accessToken = useAuth(code)
     const [search, setSearch] = useState("")
