@@ -4,7 +4,7 @@ import Dashboard from './dashboard';
 
 //takes in url code so users can login
 const code = new URLSearchParams(window.location.search).get
-('code')
+('code');
 
 function App() {
 	return code ? <Dashboard code={code} /> : <Login />;

@@ -13,9 +13,9 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.post('/refresh', (req, res) => {
 	const refreshToken = req.body.refreshToken;
 	const spotifyApi = new SpotifyWebApi({
-		redirectUri: process.env.REDIRECT_URI,
-		clientId: process.env.CLIENT_ID,
-		clientSecret: process.env.CLIENT_SECRET,
+		redirectUri: 'http://localhost:3000',
+      clientId: '49cb9bffd6fd4bb9b6df96a0858a23fa',
+      clientSecret: '1dfcf0a1642b4a1eae578cf378c872ea',
 		refreshToken,
 	});
 	spotifyApi
@@ -34,9 +34,9 @@ app.post('/refresh', (req, res) => {
 app.post('/login', function(req, res) {
 	const code = req.body.code;
 	const spotifyApi = new SpotifyWebApi({
-		redirectUri: process.env.REDIRECT_URI,
-		clientId: process.env.CLIENT_ID,
-		clientSecret: process.env.CLIENT_SECRET,
+		redirectUri: 'http://localhost:3000',
+      clientId: '49cb9bffd6fd4bb9b6df96a0858a23fa',
+      clientSecret: '1dfcf0a1642b4a1eae578cf378c872ea'
 	});
 
 	spotifyApi
@@ -54,7 +54,7 @@ app.post('/login', function(req, res) {
 });
 
 app.get('/lyrics', async (req, res) => {
-	const lyrics = await lyricsFinder(req.query.artist, req.query.track) || 'No Lyrics Found'
+	const lyrics = await lyricsFinder(req.query.artist, req.query.track) || 'No Lyrics Found';
 	res.json({ lyrics })
 })
 

@@ -1,10 +1,10 @@
-import { useState, useEffect } from "react"
-import useAuth from "./useAuth"
-import Player from "./Player"
-import TrackSearchResult from "./TrackSearchResult"
-import { Container, Form } from "react-bootstrap"
-import SpotifyWebApi from "spotify-web-api-node"
-import axios from "axios"
+import { useState, useEffect } from "react";
+import useAuth from "./useAuth";
+import Player from "./Player";
+import TrackSearchResult from "./TrackSearchResult";
+import { Container, Form } from "react-bootstrap";
+import SpotifyWebApi from "spotify-web-api-node";
+import axios from "axios";
 
 const spotifyApi = new SpotifyWebApi({
     clientId: '49cb9bffd6fd4bb9b6df96a0858a23fa'
