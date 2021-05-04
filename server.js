@@ -6,6 +6,8 @@ const SpotifyWebApi = require('spotify-web-api-node');
 const lyricsFinder = require('lyrics-finder');
 
 const app = express();
+const PORT = process.env.PORT || 8080;
+
 app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -57,5 +59,10 @@ app.get('/lyrics', async (req, res) => {
 	const lyrics = await lyricsFinder(req.query.artist, req.query.track) || 'No Lyrics Found';
 	res.json({ lyrics })
 })
+
+if (process.env.NODE_ENV === 'production') {
+    app.use(express.static('client/build'));
+}
+
 
 app.listen(3001);
