@@ -6,7 +6,7 @@ const SpotifyWebApi = require('spotify-web-api-node');
 const lyricsFinder = require('lyrics-finder');
 
 const app = express();
-const PORT = process.env.PORT || 8080;
+//const PORT = process.env.PORT || 8080;
 
 app.use(cors());
 app.use(bodyParser.json());
@@ -15,6 +15,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.post('/refresh', (req, res) => {
 	const refreshToken = req.body.refreshToken;
 	const spotifyApi = new SpotifyWebApi({
+		//redirectUri: 'process.env.PORT || 8080',
 		redirectUri: 'http://localhost:3000',
       clientId: '49cb9bffd6fd4bb9b6df96a0858a23fa',
       clientSecret: '1dfcf0a1642b4a1eae578cf378c872ea',
@@ -64,5 +65,5 @@ if (process.env.NODE_ENV === 'production') {
     app.use(express.static('client/build'));
 }
 
-
 app.listen(3001);
+//app.listen(PORT, console.log(`Server is starting at ${PORT}`));
