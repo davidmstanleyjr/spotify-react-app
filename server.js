@@ -61,9 +61,9 @@ app.get('/lyrics', async (req, res) => {
 	res.json({ lyrics })
 })
 
-if (process.env.NODE_ENV === 'production') {
-    app.use(express.static('client/build'));
-}
+//if (process.env.NODE_ENV === 'production') {
+  //  app.use(express.static('client/build'));
+//}
 
 app.listen(3001);
 //app.listen(PORT, console.log(`Server is starting at ${PORT}`));
