@@ -16,7 +16,8 @@ app.post('/refresh', (req, res) => {
 	const refreshToken = req.body.refreshToken;
 	const spotifyApi = new SpotifyWebApi({
 		// redirectUri  : 'process.env.PORT || 5000',
-		redirectUri  : 'http://localhost:5000',
+		redirectUri  : 'https://davids-spotify-app.herokuapp.com',
+		// redirectUri  : 'http://localhost:5000',
 		clientId     : '49cb9bffd6fd4bb9b6df96a0858a23fa',
 		clientSecret : '1dfcf0a1642b4a1eae578cf378c872ea',
 		refreshToken
@@ -38,7 +39,8 @@ app.post('/login', function(req, res) {
 	const code = req.body.code;
 	const spotifyApi = new SpotifyWebApi({
 		// redirectUri  : 'process.env.PORT || 5000',
-		redirectUri  : 'http://localhost:5000',
+		// redirectUri  : 'http://localhost:5000',
+		redirectUri  : 'https://davids-spotify-app.herokuapp.com',
 		clientId     : '49cb9bffd6fd4bb9b6df96a0858a23fa',
 		clientSecret : '1dfcf0a1642b4a1eae578cf378c872ea'
 	});
