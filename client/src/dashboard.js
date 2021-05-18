@@ -26,16 +26,16 @@ export default function Dashboard({ code }) {
   
     useEffect(() => {
       if (!playingTrack) return
-  
+  //this part is for lyrics
       axios
-        .get("http://localhost:3001/lyrics", {
+        .get("https://davids-spotify-app.herokuapp.com/lyrics", {
           params: {
             track: playingTrack.title,
             artist: playingTrack.artist,
           },
         })
         .then(res => {
-          setLyrics(res.data.lyrics)
+          setLyrics(res.data.lyrics);
         })
     }, [playingTrack])
   
