@@ -11,7 +11,7 @@ export default function useAuth(code) {
 		() => {
 			axios
 				// .post('http://localhost:3001/login', {
-				.post('https://davids-spotify-app.herokuapp.com', {
+				.post('https://davids-spotify-app.herokuapp.com/', {
 					code
 				})
 				.then((res) => {
@@ -32,7 +32,7 @@ export default function useAuth(code) {
 			if (!refreshToken || !expiresIn) return;
 			const interval = setInterval(() => {
 				axios
-					.post('https://davids-spotify-app.herokuapp.com', {
+					.post('https://davids-spotify-app.herokuapp.com/', {
 						// .post('http://localhost:3001/refresh', {
 						refreshToken
 					})
