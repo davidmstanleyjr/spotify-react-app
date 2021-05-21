@@ -2,9 +2,10 @@
 
 body {
 	font-family: 'Reggae One', cursive;
-	background: url(background2.PNG);
+	background-color: black;
+	color: white;
 	background-repeat: no-repeat;
-	background-size: cover;
+	/* background-size: cover; */
 }
 
 .btn {
