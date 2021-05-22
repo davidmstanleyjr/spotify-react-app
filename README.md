@@ -30,9 +30,9 @@ Also, figuring out how to get the music to play was tough. I had to spend a lot 
 The hardest part was deploying the project. The project was set up for a development environment but not to be deployed. I kept trying to deploy but it wouldn't work and I couldn't understand why because it worked locally. I then changed all the "localhost" areas to "port 5050". I also had to change my redirect uri to the URL of the live site for everything to work. That's what I'm most proud of. I've always had trouble deploying to Heroku so I was super proud to be able to do that.
 
 # Screenshots
-![Screenshot 1](screenshots/snip1.PNG)
+![Screenshot 1](images/snip1.PNG)
 
-![Screenshot 2](screenshots/snip2.PNG)
+![Screenshot 2](images/snip2.PNG)
 
 # Live Page 
 
